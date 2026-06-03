@@ -39,6 +39,8 @@ jobs:
           VITE_BASE_PATH: /${{ github.event.repository.name }}/
           VITE_GITHUB_CLIENT_ID: ${{ secrets.VITE_GITHUB_CLIENT_ID }}
           VITE_GITHUB_OAUTH_BASE: ${{ secrets.VITE_GITHUB_OAUTH_BASE }}
+          VITE_DEPLOYED_COMMIT_SHA: ${{ github.sha }}
+          VITE_REPOSITORY: ${{ github.repository }}
 
       - name: Copy SPA fallback
         run: cp build/index.html build/404.html
